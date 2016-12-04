@@ -1,0 +1,22 @@
+{
+  "name": "jsonbrowse",
+  "version": "1.0.0",
+  "description": "Browse JSON",
+  "main": "index.js",
+  "repository": "https://github.com/jorilallo/jsonbrowse.git",
+  "author": "Jori Lallo",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "next": "^1.2.3",
+    "styled-components": "^1.1.2"
+  }
+}
