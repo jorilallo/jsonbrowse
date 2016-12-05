@@ -1,8 +1,11 @@
+import Link from 'next/link';
 import s from 'styled-components';
 
 export default (props) => (
   <Container>
-    <Title>json.browse()</Title>
+    <Link href="/">
+      <Title>json.browse()</Title>
+    </Link>
     <Actions>
 
     </Actions>
@@ -10,17 +13,19 @@ export default (props) => (
 );
 
 const Container = s.div`
-  padding: 10px 20px;
+  padding: 12px 20px;
 
   background-color: rgb(35, 9, 198);
   color: #FFFFFF;
 `;
 
-const Title = s.h1`
+const Title = s.span`
   margin: 0;
   font-size: 22px;
   font-family: 'Source Code Pro', monospace;
   font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
 `;
 
 const Actions = s.div`
