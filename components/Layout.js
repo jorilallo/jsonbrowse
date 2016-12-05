@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Flex } from 'reflexbox';
 import { injectGlobal } from 'styled-components';
-import styleSheet from 'styled-components/lib/models/StyleSheet'
+import styleSheet from 'styled-components/lib/models/StyleSheet';
 
 import Header from './Header';
 

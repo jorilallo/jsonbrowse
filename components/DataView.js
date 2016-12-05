@@ -2,8 +2,9 @@ import s, { injectGlobal } from 'styled-components';
 import { Flex } from 'reflexbox';
 
 const CodeMirror = require('react-codemirror');
+
 if (typeof navigator !== 'undefined') {
-  require('codemirror/mode/javascript/javascript');
+  require('codemirror/mode/javascript/javascript'); // eslint-disable-line
 }
 
 export default (props) => {
@@ -42,4 +43,4 @@ injectGlobal`
     width: 100%;
     margin: 0 15px;
   }
-`
+`;

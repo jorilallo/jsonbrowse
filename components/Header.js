@@ -6,9 +6,7 @@ export default (props) => (
     <Link href="/">
       <Title>json.browse()</Title>
     </Link>
-    <Actions>
-
-    </Actions>
+    <Actions />
   </Container>
 );
 
