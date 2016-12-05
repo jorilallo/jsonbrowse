@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import s from 'styled-components'
+import s from 'styled-components';
+import fetch from 'isomorphic-fetch';
 
 import Layout from '../components/Layout';
 import JsonInput from '../components/JsonInput';
