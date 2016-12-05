@@ -7,7 +7,9 @@
   "author": "Jori Lallo",
   "license": "MIT",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "babel": {
     "presets": [
@@ -17,6 +19,8 @@
   },
   "dependencies": {
     "next": "^1.2.3",
+    "react-codemirror": "^0.3.0",
+    "reflexbox": "^2.2.3",
     "styled-components": "^1.1.2"
   }
 }
