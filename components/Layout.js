@@ -28,7 +28,7 @@ body, html, #__next {
 export default (props) => (
   <Flex auto column>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet" />
+      <link href="static/css/fonts.css" rel="stylesheet" />
       <link href="static/css/codemirror.css" rel="stylesheet" />
       <style>
         { !process.env.browser &&
