@@ -6,10 +6,17 @@ export default (json, filter) => {
     filter === '.'
   ) return json;
 
+  const data = JSON.parse(json); // eslint-disable-line
   const filters = filter.split('.');
-  // FIXME: Should not prepend `.` if an array
-  const newFilter = `.${ filters.join('.') }`;
+  let newFilter = filters.join('.');
 
-  // Very naive filtering using eval()
-  return JSON.stringify(eval(`data${ newFilter }`)); // eslint-disable-line
+  // Add leading . unless root is an array
+  if (newFilter[0] !== '[') newFilter = `.${ newFilter }`;
+
+  // Very naive filtering using eval() but at least we validated user input
+  try {
+    return JSON.stringify(eval(`data${ newFilter }`)); // eslint-disable-line
+  } catch (e) {
+    return null;
+  }
 };

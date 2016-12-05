@@ -14,9 +14,14 @@ export default class extends Component {
   }
 
   setFilter = (filter) => {
-    this.setState({
-      json: filterJson(this.props.json, filter),
-    });
+    // Only set filter is it matches, otherwise keep previous output
+    const filteredJson = filterJson(this.props.json, filter)
+
+    if (filteredJson) {
+      this.setState({
+        json: filteredJson,
+      });
+    }
   };
 
   render() {
