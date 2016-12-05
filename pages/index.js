@@ -39,7 +39,3 @@ export default class extends React.Component {
     );
   }
 };
-
-const Bling = s.div`
-  color: gold;
-`;
