@@ -6,6 +6,7 @@ import filterJson from '../utils/filterJson';
 
 import DataView from './DataView';
 import Filter from './Filter';
+import Copy from './Copy';
 
 export default class extends Component {
   state = {
@@ -26,13 +27,18 @@ export default class extends Component {
 
   render() {
     return (
-      <Flex column auto>
+      <Container column auto>
         <Filter onChange={ this.setFilter } filter={ this.state.filter } />
         <DataView json={ this.state.json } />
-      </Flex>
+        <Copy json={ this.state.json } />
+      </Container>
     );
   }
 }
+
+const Container = s(Flex)`
+  position: relative;
+`;
 
 const ValidNotice = s.div`
   padding: 8px 20px;
