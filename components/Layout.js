@@ -42,7 +42,8 @@ a {
 export default (props) => (
   <Flex auto column>
     <Head>
-      <title>json.browse()</title>
+      <title>json.browse</title>
+      <meta name="description" content="Browse, filter and manipulate your JSON inside your browser" />
       <link rel="icon" type="image/png" href="static/favicon.png" />
       <link href="static/css/fonts.css" rel="stylesheet" />
       <link href="static/css/codemirror.css" rel="stylesheet" />
@@ -50,6 +51,12 @@ export default (props) => (
         { !process.env.browser &&
           styleSheet.rules().map(rule => rule.cssText).join('\n') }
       </style>
+
+      <meta property="og:title" content="json.browse" />
+      <meta property="og:description" content="Browse, filter and manipulate your JSON inside your browser" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://jsonbrowse.com" />
+      <meta property="og:image" content="static/images/jsonbrowse.png" />
     </Head>
     <Header { ...props } />
     <Flex auto>
