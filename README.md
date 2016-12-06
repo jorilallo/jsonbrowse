@@ -1,6 +1,6 @@
 # JSON Browse
 
-Browse, filter and manipulate your JSON inside your browser.
+Browse, filter and manipulate your JSON inside the browser.
 
 - Fetch external JSON or paste local code
 - Filter JSON like you would filter JS objects in the browser (e.g. `data.values[1].message`)
