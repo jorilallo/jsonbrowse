@@ -21,6 +21,9 @@ export default class extends Component {
   render() {
     return (
       <Container column>
+        <Console>
+          Open Javascript console for more tools
+        </Console>
         <Copy
           text={ this.props.json }
           onCopy={ this.onJsonCopy }
@@ -48,6 +51,13 @@ const Container = s(Flex)`
 
   background-color: rgb(54, 165, 253);
   color: #FFFFFF;
+`;
+
+const Console = s.div`
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted rgb(141, 204, 255);
 `;
 
 const Copy = s(CopyToClipboard)`

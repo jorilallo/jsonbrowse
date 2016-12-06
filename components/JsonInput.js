@@ -45,12 +45,12 @@ export default class extends Component {
         <form onSubmit={ this.onSubmit }>
           <Input
             name="url"
-            placeholder="Enter request URL here"
+            placeholder="Enter API request URL here"
             onChange={ this.onInputChange }
           />
         </form>
         <TextArea
-          placeholder="...or paste JSON here"
+          placeholder="...or paste JSON directly here"
           onChange={ this.onChange }
           error={ this.state.error }
         />

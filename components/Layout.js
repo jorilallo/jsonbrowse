@@ -1,9 +1,17 @@
 import Head from 'next/head';
+import lodash from 'lodash';
 import { Flex } from 'reflexbox';
 import { injectGlobal } from 'styled-components';
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 
 import Header from './Header';
+
+import '../utils/ascii';
+
+// Expose lodash for developers when rendering clientside
+if (global.window) {
+  window._ = lodash; // eslint-disable-line
+}
 
 injectGlobal`
 body, html, #__next {
@@ -34,6 +42,8 @@ a {
 export default (props) => (
   <Flex auto column>
     <Head>
+      <title>json.browse()</title>
+      <link rel="icon" type="image/png" href="static/favicon.png" />
       <link href="static/css/fonts.css" rel="stylesheet" />
       <link href="static/css/codemirror.css" rel="stylesheet" />
       <style>

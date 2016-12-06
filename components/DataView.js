@@ -19,7 +19,12 @@ export default (props) => {
   };
 
   // Re-indent
-  const json = JSON.stringify(JSON.parse(props.json), undefined, 2);
+  const data = JSON.parse(props.json);
+  const json = JSON.stringify(data, undefined, 2);
+
+  // Expose for console access
+  global.json = json;
+  global.data = data;
 
   return (
     <Flex auto>
