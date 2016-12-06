@@ -1,5 +1,7 @@
 # JSON Browse
 
+<img width="954" alt="screenshot 2016-12-06 00 20 30" src="https://cloud.githubusercontent.com/assets/31465/20918070/05b3b170-bb4a-11e6-8a95-7c9b79f723f7.png">
+
 Browse, filter and manipulate your JSON inside your browser.
 
 - Fetch external JSON or paste local code
