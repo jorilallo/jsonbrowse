@@ -22,7 +22,8 @@ export default class extends Component {
   onSubmit = async (event) => {
     event.preventDefault();
     // TODO: Loading and error states
-    const res = await fetch(this.state.input);
+    const url = `https://proxy.jsonbrowse.com/${this.state.input}`;
+    const res = await fetch(url);
     const data = await res.text();
     this.props.onChange(data);
   }
