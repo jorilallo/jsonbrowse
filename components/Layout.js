@@ -18,7 +18,7 @@ body, html, #__next {
   margin: 0;
   height: 100%;
 
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', 'Menlo', monospace;
   font-weight: 400;
 }
 

@@ -72,12 +72,7 @@ const TextArea = s.textarea`
   resize: none;
 
   font-size:  14px;
-  font-family: 'Source Code Pro', monospace;
-
-  &:focus {
-
-  }
-
+  
   &::-webkit-input-placeholder {
    color: ${ placeholderColor };
   }
