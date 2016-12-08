@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import s from 'styled-components';
 import fetch from 'isomorphic-fetch';
 
