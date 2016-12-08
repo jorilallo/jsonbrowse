@@ -3,6 +3,7 @@
   "rules": {
     "import/no-extraneous-dependencies": 0,
     "no-unused-expressions": 0,
+    "arrow-parens": [1, "as-needed"],
     "template-curly-spacing": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/react-in-jsx-scope": 0,
