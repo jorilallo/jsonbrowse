@@ -52,6 +52,8 @@ export default (props) => (
           styleSheet.rules().map(rule => rule.cssText).join('\n') }
       </style>
 
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <meta property="og:title" content="json.browse" />
       <meta property="og:description" content="Browse, filter and manipulate your JSON inside the browser" />
       <meta property="og:type" content="website" />
