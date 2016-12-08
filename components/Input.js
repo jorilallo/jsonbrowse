@@ -15,6 +15,7 @@ export default (props) => (
 const placeholderColor = 'rgb(159, 212, 255)';
 
 const Input = s.input`
+  margin: 0;
   padding: 8px 20px;
   width: 100%;
 

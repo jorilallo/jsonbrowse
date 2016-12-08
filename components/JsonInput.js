@@ -72,8 +72,8 @@ const TextArea = s.textarea`
   outline: none;
   resize: none;
 
-  font-size:  14px;
-  
+  font-size:  16px;
+
   &::-webkit-input-placeholder {
    color: ${ placeholderColor };
   }

@@ -1,31 +1,72 @@
 import Link from 'next/link';
+import { Flex } from 'reflexbox';
 import s from 'styled-components';
 
-export default (props) => (
-  <Container>
+const linkProps = {
+  style: { color: '#ffffff' },
+};
+
+export default () => (
+  <Container justify="space-between">
     <Link href="/">
       <Title>json.browse()</Title>
     </Link>
-    <Actions />
+    <Actions align="center">
+      <Link href="/?url=https://api.github.com/repos/jorilallo/jsonbrowse">
+        <a { ...linkProps }>
+          Demo
+        </a>
+      </Link>
+      <Separator />
+      <Link href="/info">
+        <a { ...linkProps }>
+          Info
+        </a>
+      </Link>
+      <Separator />
+      <Link href="https://github.com/jorilallo/jsonbrowse">
+        <a { ...linkProps }>
+          GitHub
+        </a>
+      </Link>
+    </Actions>
   </Container>
 );
 
-const Container = s.div`
+const breakpoint = '425px';
+
+const Container = s(Flex)`
   padding: 12px 20px;
 
   background-color: rgb(35, 9, 198);
   color: #FFFFFF;
+
+  @media only screen and (max-width: ${breakpoint}) {
+    flex-direction: column;
+  }
 `;
 
 const Title = s.span`
   margin: 0;
   font-size: 22px;
-  font-family: 'Source Code Pro', monospace;
   font-weight: 500;
   color: #ffffff;
   text-decoration: none;
 `;
 
-const Actions = s.div`
+const Actions = s(Flex)`
+  margin-top: 3px;
 
+  @media only screen and (max-width: ${breakpoint}) {
+    margin-top: 12px;
+  }
+`;
+
+const Separator = s.div`
+  margin: 0 7px;
+
+  &::after {
+    content: " · ";
+    color: #3c73bd;
+  }
 `;
