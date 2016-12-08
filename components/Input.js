@@ -22,6 +22,7 @@ const Input = s.input`
   background-color: rgb(54, 165, 253);
   border: none;
   outline: none;
+  border-radius: 0;
 
   color: #FFFFFF;
   font-size: 16px;
