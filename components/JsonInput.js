@@ -13,6 +13,7 @@ export default class extends Component {
   state = {
     error: false,
     input: null,
+    loading: false,
   }
 
   onInputChange = (event) => {
@@ -21,11 +22,18 @@ export default class extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-    // TODO: Loading and error states
-    const url = `https://proxy.jsonbrowse.com/${this.state.input}`;
-    const res = await fetch(url);
-    const data = await res.text();
-    this.props.onChange(data);
+    this.setState({ loading: true });
+    try {
+      const url = `https://proxy.jsonbrowse.com/${this.state.input}`;
+      const res = await fetch(url);
+      const data = await res.text();
+
+      this.props.onChange(data);
+    } catch (e) {
+      // Handle error
+      this.setState({ loading: false });
+    }
+
   }
 
   onChange = (event) => {
@@ -48,6 +56,7 @@ export default class extends Component {
             name="url"
             placeholder="Enter API request URL here"
             onChange={ this.onInputChange }
+            loading={ this.state.loading }
           />
         </form>
         <TextArea
