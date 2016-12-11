@@ -37,6 +37,7 @@ const breakpoint = '425px';
 
 const Container = s(Flex)`
   padding: 12px 20px;
+  flex-shrink: 0;
 
   background-color: rgb(35, 9, 198);
   color: #FFFFFF;
