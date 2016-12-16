@@ -1,4 +1,4 @@
-import stringifyObject from 'stringify-object';
+import stringifyObject from 'stringify-object-with-one-liners';
 
 const objectifyJson = json => (
   stringifyObject(JSON.parse(json), {

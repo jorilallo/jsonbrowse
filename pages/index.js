@@ -16,13 +16,14 @@ const DEFAULT_STATE = {
 export default class extends React.Component {
   state = DEFAULT_STATE
 
-  static async getInitialProps ({ query }) {
+  static async getInitialProps ({ req, query }) {
     let initialUrl;
     if (query.url) {
       initialUrl = decodeURIComponent(query.url);
     }
     return {
       initialUrl,
+      isServer: !!req,
     }
   }
 
@@ -90,7 +91,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <Layout onClear={ this.onClear }>
+      <Layout onClear={ this.onClear } isServer={ this.props.isServer }>
         { this.state.mode === 'input' && (
           <JsonInput
             onTextareaChange={ this.onTextareaChange }
