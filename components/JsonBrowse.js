@@ -38,6 +38,7 @@ export default class extends Component {
 
 const Container = s(Flex)`
   position: relative;
+  flex-shrink: 0;
 `;
 
 const ValidNotice = s.div`

@@ -51,6 +51,7 @@ const Input = s.input`
 `;
 
 const Wrapper = s(Flex)`
+  flex-shrink: 0;
   background-color: rgb(54, 165, 253);
 `;
 

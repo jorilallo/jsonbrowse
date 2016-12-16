@@ -1,67 +1,40 @@
 import { Component, PropTypes } from 'react';
 import { Flex } from 'reflexbox';
-import fetch from 'isomorphic-fetch';
 import s from 'styled-components';
 
 import Input from './Input';
 
 export default class extends Component {
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
+    onUrlSubmit: PropTypes.func.isRequired,
+    onTextareaChange: PropTypes.func.isRequired,
+    onInputChange: PropTypes.func.isRequired,
   }
 
   state = {
     error: false,
-    input: null,
-    loading: false,
   }
 
-  onInputChange = (event) => {
-    this.setState({ input: event.target.value });
-  }
-
-  onSubmit = async (event) => {
+  onUrlSubmit = (event) => {
     event.preventDefault();
-    this.setState({ loading: true });
-    try {
-      const url = `https://proxy.jsonbrowse.com/${this.state.input}`;
-      const res = await fetch(url);
-      const data = await res.text();
-
-      this.props.onChange(data);
-    } catch (e) {
-      // Handle error
-      this.setState({ loading: false });
-    }
-
+    this.props.onUrlSubmit();
   }
-
-  onChange = (event) => {
-    let error = false;
-    const value = event.target.value;
-    try {
-      if (value) JSON.parse(value);
-      this.props.onChange(value);
-    } catch (e) {
-      error = true;
-    }
-    this.setState({ error });
-  };
 
   render() {
     return (
       <Flex column auto>
-        <form onSubmit={ this.onSubmit }>
+        <form onSubmit={ this.onUrlSubmit }>
           <Input
             name="url"
+            value={ this.props.url }
             placeholder="Enter API request URL here"
-            onChange={ this.onInputChange }
-            loading={ this.state.loading }
+            onChange={ this.props.onInputChange }
+            loading={ this.props.loading }
           />
         </form>
         <TextArea
           placeholder="...or paste JSON directly here"
-          onChange={ this.onChange }
+          onChange={ this.props.onTextareaChange }
           error={ this.state.error }
         />
       </Flex>

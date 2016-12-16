@@ -6,13 +6,15 @@ const linkProps = {
   style: { color: '#ffffff' },
 };
 
-export default () => (
+const SAMPLE_URL = 'https://api.github.com/repos/jorilallo/jsonbrowse';
+
+export default props => (
   <Container justify="space-between">
     <Link href="/">
-      <Title>json.browse()</Title>
+      <Title onClick={ props.onClear }>json.browse()</Title>
     </Link>
     <Actions align="center">
-      <Link href="/?url=https://api.github.com/repos/jorilallo/jsonbrowse">
+      <Link href={ `/?url=${encodeURIComponent(SAMPLE_URL)}` }>
         <a { ...linkProps }>
           Demo
         </a>
