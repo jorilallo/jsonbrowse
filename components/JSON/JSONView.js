@@ -23,7 +23,10 @@ export default (props) => {
 const LineNumbers = ({ count }) => (
   <div style={{ padding: '0 6px 0 20px', textAlign: 'right' }}>
     { Array.from(Array(count).keys()).map(lineNumber => (
-      <div style={{ color: '#e0e0e0', userSelect: 'none' }}>
+      <div
+        key={ lineNumber }
+        style={{ color: '#e0e0e0', userSelect: 'none' }}
+      >
         { lineNumber + 1 }
       </div>
     )) }
