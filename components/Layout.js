@@ -24,7 +24,7 @@ export default class extends React.Component {
     const css = this.props.isServer ? styleSheet.rules().map(rule => rule.cssText).join('\n') : '';
 
     return (
-      <Flex auto column>
+      <Flex auto column style={{ width: '100%' }}>
         <Head>
           <title>json.browse</title>
           <meta name="description" content="Browse, filter and manipulate your JSON inside the browser" />
@@ -40,7 +40,7 @@ export default class extends React.Component {
           <meta property="og:image" content="static/images/jsonbrowse.png" />
         </Head>
         <Header { ...this.props } />
-        <Flex auto>
+        <Flex auto style={{ overflow: 'scroll' }}>
           { this.props.children }
         </Flex>
       </Flex>

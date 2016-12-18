@@ -11,7 +11,7 @@ export default (props) => {
   global.data = data;
 
   return (
-    <Flex auto>
+    <Flex auto style={{ overflow: 'scroll' }}>
       <JSONView data={ data } filter="" />
     </Flex>
   );
