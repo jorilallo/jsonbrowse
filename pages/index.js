@@ -51,7 +51,7 @@ export default class extends React.Component {
 
     try {
       const url = `https://proxy.jsonbrowse.com/${encodeURIComponent(this.state.url)}`;
-      const res = await fetch(this.state.url);
+      const res = await fetch(url);
       const data = await res.text();
 
       this.setState({
