@@ -6,6 +6,8 @@ import Layout from '../components/Layout';
 import JsonInput from '../components/JsonInput';
 import JsonBrowse from '../components/JsonBrowse';
 
+import parseUri from '../utils/parseUri';
+
 const DEFAULT_STATE = {
   mode: 'input',
   url: '',
@@ -50,7 +52,15 @@ export default class extends React.Component {
     this.setState({ loading: true });
 
     try {
-      const url = `https://proxy.jsonbrowse.com/${encodeURIComponent(this.state.url)}`;
+      const { hostname } = parseUri(this.state.url);
+      let url;
+
+      // Localhost should always bypass CORS proxy
+      if (hostname === 'localhost') {
+        url = encodeURIComponent(this.state.url);
+      } else {
+        url = `https://proxy.jsonbrowse.com/${encodeURIComponent(this.state.url)}`;
+      }
       const res = await fetch(url);
       const data = await res.text();
 
