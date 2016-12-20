@@ -76,6 +76,11 @@ input, textarea, select, button {
 
 a {
   text-decoration: none;
+  color: #36a5fd;
+}
+
+p {
+  font-size: 14px;
 }
 
 #__next {

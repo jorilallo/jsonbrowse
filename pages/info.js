@@ -14,8 +14,8 @@ export default () => (
           manipulate JSON right inside your browser.
         </p>
         <p>
-          You can fetch JSON data directly from a publicly readable API
-          endpoint or paste from your clipboard.
+          You can fetch JSON data directly from a publicly readable API,
+          localhost or paste from your own clipboard.
         </p>
         <p>
           Once you have your data, you can filter it like you would filter
@@ -27,8 +27,8 @@ export default () => (
 files[0].filename
         </Codeblock>
         <p>
-          At any point, filtered or unfiltered, you can copy the output as JSON
-          string or as Javascript object which you can use directly in your code.
+          At any point, filtered or unfiltered, you can copy the output as a JSON
+          string or as a Javascript object which you can be directly used in your code.
         </p>
         <ImageContainer>
           <Image src="/static/images/console.png" alt="Console" />
@@ -36,7 +36,15 @@ files[0].filename
         <p>
           To do more advanced filtering and manipulation of data, currently filtered
           data is exposed as global variables and can be accessed with browser&apos;s
-          Javascript console. Also <a href="https://lodash.com/docs/">lodash</a> is available.
+          Javascript console. <a href="https://lodash.com/docs/">lodash</a> is available
+          as well.
+        </p>
+
+        <Subtitle>About</Subtitle>
+        <p>
+          <i>json.browse</i> is build by <a href="https://twitter.com/jorilallo" target="_blank">
+          Jori Lallo</a>. Source code is available on <a href="https://github.com/jorilallo/jsonbrowse" target="_blank">
+          GitHub</a>.
         </p>
       </Container>
     </Flex>
@@ -46,6 +54,9 @@ files[0].filename
 const Container = s.div`
   width: 640px;
   padding: 20px;
+  overflow: auto;
+
+  font-weight: 14px;
 
   @media only screen and (max-width : 640px) {
     width: 100%;
@@ -56,11 +67,15 @@ const Title = s.h2`
   font-weight: 500;
 `;
 
+const Subtitle = s.h3`
+  font-weight: 500;
+`;
+
 const Codeblock = s.pre`
-  padding: 10px;
+  padding: 10px 5px;
   background: #eaf6ff;
 
-  font-size: 18px;
+  font-size: 14px;
 `;
 
 const ImageContainer = s.p`
@@ -70,4 +85,8 @@ const ImageContainer = s.p`
 
 const Image = s.img`
   max-width: 400px;
+
+  @media only screen and (max-width : 640px) {
+    width: 100%;
+  }
 `;
