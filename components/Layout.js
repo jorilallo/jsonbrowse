@@ -54,6 +54,7 @@ body, html, #__next {
   height: 100%;
 
   font-family: 'Courier', monospace;
+  font-size: 16px;
   font-weight: 400;
 }
 
