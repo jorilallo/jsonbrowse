@@ -5,6 +5,7 @@ import fetch from 'isomorphic-fetch';
 import Layout from '../components/Layout';
 import JsonInput from '../components/JsonInput';
 import JsonBrowse from '../components/JsonBrowse';
+import Error from '../components/Error';
 
 import parseUri from '../utils/parseUri';
 
@@ -13,6 +14,7 @@ const DEFAULT_STATE = {
   url: '',
   loading: false,
   json: null,
+  error: null,
 };
 
 export default class extends React.Component {
@@ -70,8 +72,10 @@ export default class extends React.Component {
       });
     } catch (e) {
       // Handle error
-      console.error(e)
-      this.setState({ loading: false });
+      this.setState({
+        loading: false,
+        error: e.message,
+      });
     }
   }
 
@@ -79,7 +83,7 @@ export default class extends React.Component {
     let error = false;
     const value = event.target.value;
     try {
-      if (value) JSON.parse(value);
+      JSON.parse(value);
 
       this.setState({
         mode: 'browse',
@@ -87,7 +91,7 @@ export default class extends React.Component {
         error: false,
       });
     } catch (e) {
-      this.setState({ error: true });
+      this.setState({ error: 'Unable to parse JSON' });
     }
   }
 
@@ -99,9 +103,16 @@ export default class extends React.Component {
     this.setState(DEFAULT_STATE);
   }
 
+  onDismissError = () => {
+    this.setState({ error: null });
+  }
+
   render() {
     return (
       <Layout onClear={ this.onClear } isServer={ this.props.isServer }>
+        { this.state.error && (
+          <Error onClick={ this.onDismissError }>{ this.state.error }</Error>
+        ) }
         { this.state.mode === 'input' && (
           <JsonInput
             onTextareaChange={ this.onTextareaChange }

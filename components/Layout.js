@@ -40,7 +40,7 @@ export default class extends React.Component {
           <meta property="og:image" content="static/images/jsonbrowse.png" />
         </Head>
         <Header { ...this.props } />
-        <Flex auto style={{ overflow: 'scroll' }}>
+        <Flex auto column style={{ overflow: 'scroll' }}>
           { this.props.children }
         </Flex>
       </Flex>
