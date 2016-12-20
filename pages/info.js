@@ -6,8 +6,8 @@ import Layout from '../components/Layout';
 
 export default () => (
   <Layout>
-    <Flex auto justify="center">
-      <Container>
+    <Container auto justify="center">
+      <Content>
         <Title>What is json.browse?</Title>
         <p>
           <i>json.browse</i> allows you to browse, prettify, filter and
@@ -46,17 +46,19 @@ files[0].filename
           Jori Lallo</a>. Source code is available in <a href="https://github.com/jorilallo/jsonbrowse" target="_blank">
           GitHub</a>.
         </p>
-      </Container>
-    </Flex>
+      </Content>
+    </Container>
   </Layout>
 );
 
-const Container = s.div`
-  width: 640px;
+const Container = s(Flex)`
   padding: 20px;
   overflow: auto;
+`;
 
-  font-weight: 14px;
+const Content = s.div`
+  width: 640px;
+  height: 100%;
 
   @media only screen and (max-width : 640px) {
     width: 100%;
