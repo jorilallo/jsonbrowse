@@ -19,6 +19,8 @@ export default class extends Component {
   }
 
   render() {
+    const showShortcut = navigator.platform === 'MacIntel';
+
     return (
       <Container column>
         <Copy
@@ -34,7 +36,7 @@ export default class extends Component {
           <span>{ this.state.copiedJs ? '✔ Copied' : 'Copy as Javascript' }</span>
         </Copy>
         <Console>
-          Open Javascript console for more options (⌥⌘J)
+          Open Javascript console for more options { showShortcut && "(⌥⌘J)" }
         </Console>
       </Container>
     );
