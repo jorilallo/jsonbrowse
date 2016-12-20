@@ -47,6 +47,7 @@ const Container = s(Flex)`
 
   @media only screen and (max-width: ${breakpoint}) {
     flex-direction: column;
+    height: 80px;
   }
 `;
 
