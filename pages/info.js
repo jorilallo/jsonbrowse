@@ -42,8 +42,13 @@ files[0].filename
 
         <Subtitle>About</Subtitle>
         <p>
+<<<<<<< HEAD
           <i>json.browse</i> was build by <a href="https://twitter.com/jorilallo" target="_blank">
           Jori Lallo</a>. Source code is available in <a href="https://github.com/jorilallo/jsonbrowse" target="_blank">
+=======
+          <i>json.browse</i> is build by <a href="https://twitter.com/jorilallo" target="_blank">
+          Jori Lallo</a>. Source code is available on <a href="https://github.com/jorilallo/jsonbrowse" target="_blank">
+>>>>>>> origin/refactor
           GitHub</a>.
         </p>
       </Container>
