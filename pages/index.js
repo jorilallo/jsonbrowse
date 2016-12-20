@@ -43,7 +43,10 @@ export default class extends React.Component {
   componentWillReceiveProps = (nextProps) => {
     const { query } = nextProps.url;
     if (query && query.url && query.url !== this.state.url) {
-      // Fetch pre-supplied API url
+      // Clear state
+      this.onClear();
+
+      // Fetch pre-supplied or changed API url
       this.setState({ url: query.url }, () => {
         this.onUrlSubmit();
       });
@@ -56,15 +59,19 @@ export default class extends React.Component {
     try {
       const { hostname } = parseUri(this.state.url);
       let url;
+      const encodedUrl = encodeURIComponent(this.state.url);
 
       // Localhost should always bypass CORS proxy
       if (hostname === 'localhost') {
-        url = encodeURIComponent(this.state.url);
+        url = encodedUrl;
       } else {
-        url = `https://proxy.jsonbrowse.com/${encodeURIComponent(this.state.url)}`;
+        url = `https://proxy.jsonbrowse.com/${encodedUrl}`;
       }
       const res = await fetch(url);
       const data = await res.text();
+
+      // Modify location to reflect fetched API url
+      history.pushState(history.state, null, `?url=${encodedUrl}`);
 
       this.setState({
         mode: 'browse',
