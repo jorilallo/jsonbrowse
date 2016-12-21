@@ -51,6 +51,10 @@ const Container = s(Flex)`
 
   background-color: rgb(54, 165, 253);
   color: #FFFFFF;
+
+  @media only screen and (max-width: 425px) {
+    display: none !important;
+  }
 `;
 
 const Console = s.div`

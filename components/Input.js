@@ -24,6 +24,7 @@ const Input = s.input`
   margin: 0;
   padding: 8px 20px 8px 0;
   width: 100%;
+  height: 36px;
 
   background-color: transparent;
   border: none;
@@ -51,6 +52,7 @@ const Input = s.input`
 `;
 
 const Wrapper = s(Flex)`
+  flex-shrink: 0;
   background-color: rgb(54, 165, 253);
 `;
 

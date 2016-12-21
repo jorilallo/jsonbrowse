@@ -27,7 +27,7 @@ export default class extends Component {
 
   render() {
     return (
-      <Container column auto>
+      <Container column auto style={{ width: '100%' }}>
         <Filter onChange={ this.setFilter } filter={ this.state.filter } />
         <DataView json={ this.state.json } />
         <Copy json={ this.state.json } />
@@ -38,6 +38,7 @@ export default class extends Component {
 
 const Container = s(Flex)`
   position: relative;
+  flex-shrink: 0;
 `;
 
 const ValidNotice = s.div`
