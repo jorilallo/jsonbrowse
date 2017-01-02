@@ -10,13 +10,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "deploy": "now && now alias"
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
+  "now": {
+    "alias": "jsonbrowse.com"
   },
   "dependencies": {
     "isomorphic-fetch": "2.2.1",
