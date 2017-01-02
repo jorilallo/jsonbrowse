@@ -63,7 +63,7 @@ export default class extends React.Component {
 
       // Localhost should always bypass CORS proxy
       if (hostname === 'localhost') {
-        url = encodedUrl;
+        url = this.state.url;
       } else {
         url = `https://proxy.jsonbrowse.com/${encodedUrl}`;
       }
