@@ -1,6 +1,7 @@
 import lodash from 'lodash';
 import { Flex } from 'reflexbox';
 import { injectGlobal } from 'styled-components';
+import ReactGA from 'react-ga';
 
 import Header from './Header';
 
@@ -11,14 +12,23 @@ if (global.window) {
   window._ = lodash; // eslint-disable-line
 }
 
-export default props => (
-  <Flex auto column style={{ width: '100%' }}>
-    <Header { ...props } />
-    <Flex auto column style={{ overflow: 'scroll' }}>
-      { props.children }
-    </Flex>
-  </Flex>
-);
+export default class extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-89359604-1');
+    ReactGA.pageview(window.location.pathname);
+  }
+
+  render() {
+    return (
+      <Flex auto column style={{ width: '100%' }}>
+        <Header { ...this.props } />
+        <Flex auto column style={{ overflow: 'scroll' }}>
+          { this.props.children }
+        </Flex>
+      </Flex>
+    );
+  }
+}
 
 injectGlobal`
 body, html, #__next {
