@@ -19,7 +19,8 @@ export default class MyDocument extends Document {
             name="description"
             content="Browse, filter and manipulate your JSON inside the browser"
           />
-          <link rel="icon" type="image/png" href="static/favicon.png" />
+          <link rel="icon" type="image/png" href="/static/favicon.png" />
+          <link rel="stylesheet" type="text/css" href="/static/css/fonts.css" />
 
           <meta name="viewport" content="width=device-width, initial-scale=1" />
 
