@@ -19,11 +19,9 @@
     ]
   },
   "dependencies": {
-  
-    "fontfaceobserver": "^2.0.7",
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.17.2",
-    "next": "1.2.3",
+    "next": "2.0.0-beta.12",
     "react-copy-to-clipboard": "4.2.3",
     "reflexbox": "2.2.3",
     "stringify-object-with-one-liners": "1.0.0",
