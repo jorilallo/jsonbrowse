@@ -59,7 +59,9 @@ p {
   font-size: 14px;
 }
 
-#__next {
+#__next, body > div:first-child {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 `;
