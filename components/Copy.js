@@ -4,6 +4,11 @@ import { Flex } from 'reflexbox';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { objectifyJson } from '../utils/json';
 
+const prettifyJson = (jsonString) => {
+  const obj = JSON.parse(jsonString);
+  return JSON.stringify(obj, null, 2);
+}
+
 export default class extends Component {
   state = {
     copiedJs: false,
@@ -24,7 +29,7 @@ export default class extends Component {
     return (
       <Container column>
         <Copy
-          text={ this.props.json }
+          text={ prettifyJson(this.props.json) }
           onCopy={ this.onJsonCopy }
         >
           <span>{ this.state.copiedJson ? '✔ Copied' : 'Copy as JSON' }</span>
