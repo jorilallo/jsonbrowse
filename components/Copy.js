@@ -38,10 +38,10 @@ export default class extends Component {
           text={ objectifyJson(this.props.json) }
           onCopy={ this.onJsCopy }
         >
-          <span>{ this.state.copiedJs ? '✔ Copied' : 'Copy as Javascript' }</span>
+          <span>{ this.state.copiedJs ? '✔ Copied' : 'Copy as JavaScript' }</span>
         </Copy>
         <Console>
-          Open Javascript console for more options { showShortcut && "(⌥⌘J)" }
+          Open JavaScript console for more options { showShortcut && "(⌥⌘J)" }
         </Console>
       </Container>
     );
