@@ -6,8 +6,8 @@ Browse, filter and manipulate your JSON inside the browser.
 
 - Fetch local and external JSON or paste local code
 - Filter JSON like you would filter JS objects in the browser (e.g. `data.values[1].message`)
-- Copy filtered output to your clipboard as a javascript object or JSON string
-- Manipulate filtered output in your browser's javascript console
+- Copy filtered output to your clipboard as a JavaScript object or JSON string
+- Manipulate filtered output in your browser's JavaScript console
 
 Live version hosted at [jsonbrowse.com](https://jsonbrowse.com).
 

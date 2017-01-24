@@ -19,7 +19,7 @@ export default () => (
         </p>
         <p>
           Once you have your data, you can filter it like you would filter
-          any Javascript object. For example the following will fetch the name of
+          any JavaScript object. For example the following will fetch the name of
           the changed file from <a href="https://api.github.com/repos/jorilallo/jsonbrowse/commits/54516f2ec071abd81d0d9945e6ce5d45d99010f7">
           this project&apos;s commit</a>:
         </p>
@@ -28,7 +28,7 @@ files[0].filename
         </Codeblock>
         <p>
           At any point, filtered or unfiltered, you can copy the output as a JSON
-          string or as a Javascript object which you can be directly used in your code.
+          string or as a JavaScript object which you can be directly used in your code.
         </p>
         <ImageContainer>
           <Image src="/static/images/console.png" alt="Console" />
@@ -36,7 +36,7 @@ files[0].filename
         <p>
           To do more advanced filtering and manipulation of data, currently filtered
           data is exposed as global variables and can be accessed with browser&apos;s
-          Javascript console. <a href="https://lodash.com/docs/">lodash</a> is available
+          JavaScript console. <a href="https://lodash.com/docs/">lodash</a> is available
           as well.
         </p>
 

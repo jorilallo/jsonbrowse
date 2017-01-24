@@ -17,7 +17,7 @@ console.log(`%cWelcome to json.browse() console. To give you more
 freedom over your data, you can manipulate your loaded
 and filtered data here with following variables:`, 'color: blue;');
 console.log('');
-console.log('%c    data  ' + '%c- ' + 'Parsed data as Javascript object', 'color: #9c27b0;', 'color: grey;');
+console.log('%c    data  ' + '%c- ' + 'Parsed data as JavaScript object', 'color: #9c27b0;', 'color: grey;');
 console.log('%c    json  ' + '%c- ' + 'Filtered JSON as a string', 'color: #9c27b0;', 'color: grey;');
 console.log('');
 console.log('%cLodash is also available (e.g. ' + '%c_.last(data.items);' + '%c)', 'color: blue;', 'font-style: italic; color: #9c27b0;', 'color: blue;');
