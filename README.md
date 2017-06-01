@@ -33,6 +33,18 @@ npm run start
 JSON Browse is build using [`next.js`](https://github.com/zeit/next.js/), [`styled-components`](https://github.com/styled-components/styled-components) and
 easily deployable using [`now`](https://zeit.co/now/).
 
+## Docker
+
+To build and run in docker
+
+```
+git clone https://github.com/jorilallo/jsonbrowse.git
+cd jsonbrowse
+
+docker build -t jsonbrowse:1.0.0 ./
+docker run -d -p 3000:3000 --name jsonbrowse jsonbrowse:1.0.0
+```
+
 ## Dependencies
 
 JSON Browse's all external requests are proxied with [jsonbrowse-proxy](https://github.com/jorilallo/jsonbrowse-proxy)
